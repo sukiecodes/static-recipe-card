@@ -51,13 +51,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun RecipeCard(modifier: Modifier = Modifier) {
-    Card(
+    Card( // card will hold all recipe contents
         modifier = modifier.wrapContentSize(),
         colors = CardDefaults.cardColors(
             containerColor = Color.White,
+            // changes the background color of card from default grey to white
         ),
     ) {
         Row(
+            // this row contains the recipe title and image
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                     .padding(24.dp)
@@ -87,7 +89,7 @@ fun RecipeCard(modifier: Modifier = Modifier) {
             modifier = Modifier
                 .padding(24.dp)
         ) {
-            LazyColumn {
+            LazyColumn { // ingredients and instructions
                 item {
                     Text(text = "Ingredients", fontWeight = FontWeight.Bold)
                     Text(text = "▸ Strawberries, finely chopped (1/3 cup)")
